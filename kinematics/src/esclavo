@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+# license removed for brevity
+import rospy
+from node_mssg.msg import ViewTemplate
+from std_msgs.msg import String
+import numpy 
+import serial
+import RPi.GPIO as GPIO
+
+slave = serial.Serial('/dev/ttyS0',9600)
+
+def talker():
+    #Defino el nodo de comunicacion
+    pub = rospy.Publisher('comunicacion', ViewTemplate, queue_size=10)
+    #Iniciamos el nodo
+    rospy.init_node('public', anonymous=True)
+    rate = rospy.Rate(5) # 10hz
+    
+
+
+    last_ang=0.0
+    while not rospy.is_shutdown():
+        if slave.in_waiting:
+            try:        
+                    data = slave.readline()
+                    data_list = data.split(',')
+                    print(data_list)
+                    caso = int(data_list[0])
+                    ang = float(data_list[1])
+
+                    last_ang = ang
+            except:
+                    caso = 0
+                    ang = last_ang
+
+            x = ViewTemplate(caso=caso,ang=ang)
+            pub.publish(x)
+
+
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass
+

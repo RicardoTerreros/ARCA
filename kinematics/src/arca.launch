@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="kinematics" type="subsbase.py" name="subsbase" />
+	<node pkg="kinematics" type="subsbrazos.py" name="subsbrazos" />
+	<!--node pkg="kinematics" type="subscuello.py" name="subscuello" /-->
+	<node pkg="kinematics" type="subscabeza.py" name="subscabeza" />
+</launch>
