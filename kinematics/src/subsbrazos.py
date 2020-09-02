@@ -242,47 +242,56 @@ def callback(data1):
  
 
     if accion=='1':
-        time.sleep(4)
-        despertar()
-        time.sleep(1.5)
         estado_normal()
-        rospy.loginfo("despertar")
+        time.sleep(3)
+        estado_normal()
+        rospy.loginfo("normal")
+
     elif accion=='2':
         hola()
         time.sleep(3)
         estado_normal()
         rospy.loginfo("hola")
+	
     elif accion=='3':
+        time.sleep(4)
+        despertar()
+        time.sleep(1.5)
         estado_normal()
-        time.sleep(3)
-        estado_normal()
-        rospy.loginfo("normal")
+        rospy.loginfo("despertar")
+
     elif accion=='4':
-        estado_normal()
+        levantar_brazo_izquierdo()
+	time.sleep(6)
+        rospy.loginfo("planes open day")
+
+    elif accion=='5':
+        levantar_brazo_izquierdo()
+	time.sleep(6)
+        rospy.loginfo("acerca de mi")
+
+    elif accion=='6':
+        hold()
+	time.sleep(10) #editar cantidad de segundos
+        rospy.loginfo("hold")
+
+    elif accion=='7':
+        hola()
         time.sleep(3)
         estado_normal()
-        rospy.loginfo("normal")
-    elif accion=='5':
-        #estado_normal()#Crear el hablar
-        levantar_brazo_izquierdo()
-        rospy.loginfo("hablar")
-    elif accion=='6':
-        estado_normal()
-        rospy.loginfo("normal")
-    elif accion=='7':
-        hold()
-	time.sleep(10)
-        #what()
-        rospy.loginfo("hold")
+        rospy.loginfo("despedir")
+
     elif accion=='8':
         levantar_brazos()
         #sorprendida()
         time.sleep(20)
-        rospy.loginfo("levantar_brazos")
+        rospy.loginfo("victoria")
+
     else:
         accion='0'
         estado_normal()
         rospy.loginfo("normal")
+
     accion='0'
     term = 1
     #PUBLICACION
