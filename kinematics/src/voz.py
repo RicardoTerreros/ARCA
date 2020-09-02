@@ -13,13 +13,13 @@ def callback(data1):
 	print(caso)
 
 	if caso == '5': #borrar poner solo letra
-		playsound('Intro_Op2.mp3')	
+		playsound('~/catkin_ws/src/ARCA/kinematics/src/Intro_Op2.mp3')	
 
 	if caso == '7':
-		playsound('Despedida_Op2.mp3')	
+		playsound('~/catkin_ws/src/ARCA/kinematics/src/Despedida_Op2.mp3')	
 
 	if caso == '2':
-		playsound('Saludo_Op2.mp3')
+		playsound('~/catkin_ws/src/ARCA/kinematics/src/Saludo_Op2.mp3')
 
 
 
