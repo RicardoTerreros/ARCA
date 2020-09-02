@@ -47,33 +47,37 @@ def callback(data1):
     #Defino el nodo de comunicacion
 
     if accion=='1':
-        despierta_cuello()
+	estado_normal_cuello()
+        time.sleep(3)
+        rospy.loginfo("normal")
     elif accion=='2':
         estado_normal_cuello()
         time.sleep(3)
         rospy.loginfo("hola")
     elif accion=='3':
-        estado_normal_cuello()
-        time.sleep(3)
-        estado_normal()
-        rospy.loginfo("normal")
+        despierta_cuello()
+        rospy.loginfo("despertar")
     elif accion=='4':
         estado_normal_cuello()
         time.sleep(3)
         estado_normal()
-        rospy.loginfo("normal")
+        rospy.loginfo("planes open day")
     elif accion=='5':
-        despierta_cuello()#Crear el hablar
-        rospy.loginfo("hablar")
+        estado_normal_cuello()
+        time.sleep(3)
+        rospy.loginfo("acerca de mi")
     elif accion=='6':
         estado_normal_cuello()
-        rospy.loginfo("normal")
+	time.sleep(3)
+        rospy.loginfo("hold")
     elif accion=='7':
         estado_normal_cuello()
-        rospy.loginfo("hold")
+	time.sleep(3)
+        rospy.loginfo("despedida")
     elif accion=='8':
         estado_normal_cuello()
-        rospy.loginfo("levantar_brazos")
+	time.sleep(3)
+        rospy.loginfo("victoria")
     else:
         accion='0'
         estado_normal_cuello()
