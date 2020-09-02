@@ -12,14 +12,14 @@ def callback(data1):
 
 	print(caso)
 
-	if caso == 'Acerca de mi': #borrar poner solo letra
+	if caso == '5': #borrar poner solo letra
 		playsound('Intro_Op2.mp3')	
 
-	if caso == 'Despedida':
+	if caso == '7':
 		playsound('Despedida_Op2.mp3')	
 
-	if caso == 'Saludar':
-		playsound('Saludo_Op2.mp3')	
+	if caso == '2':
+		playsound('Saludo_Op2.mp3')
 
 
 
